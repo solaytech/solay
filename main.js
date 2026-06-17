@@ -14,15 +14,7 @@ mobileMenu.querySelectorAll('a').forEach(link => {
   link.addEventListener('click', () => mobileMenu.classList.remove('open'));
 });
 
-// Contact form
-document.getElementById('contactForm').addEventListener('submit', function(e) {
-  e.preventDefault();
-  const note = document.getElementById('formNote');
-  note.textContent = 'Message sent! We\'ll be in touch within one business day.';
-  note.className = 'form-note success';
-  this.reset();
-  setTimeout(() => { note.textContent = ''; note.className = 'form-note'; }, 6000);
-});
+// Form submits natively to Formspree (action attribute on the form element)
 
 // Fade-in on scroll
 const observer = new IntersectionObserver((entries) => {
